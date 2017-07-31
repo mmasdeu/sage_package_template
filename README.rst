@@ -11,11 +11,12 @@ advanced documentation on python package creation on
 Installation
 ------------
 
-Install cookiecutter::
+1) Install cookiecutter::
 
      $ pip install cookiecutter --user
 
-Bake your package::
+2) Bake your package::
 
      $ ~/.local/bin/cookiecutter https://github.com/mmasdeu/sage_package_template
 
+3) Follow the instructions that you will find in the README.rst file inside your package.
