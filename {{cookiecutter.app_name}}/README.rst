@@ -15,7 +15,9 @@ Further setup instructions (to delete before distribution)
 
 2) Put your newly created package in it::
 
+     $ cd {{cookiecutter.app_name}}
      $ git init
+     $ git add *
      $ git commit -m "first commit"
      $ git remote add origin https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.app_name}}.git
      $ git push -u origin master
