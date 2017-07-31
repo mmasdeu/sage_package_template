@@ -17,5 +17,5 @@ Install cookiecutter::
 
 Bake your package::
 
-     $ ./local/bin/cookiecutter https://github.com/mmasdeu/cookiecutter_sage
+     $ ./local/bin/cookiecutter https://github.com/mmasdeu/sage_template_package
 
