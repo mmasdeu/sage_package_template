@@ -8,9 +8,10 @@ Further setup instructions (to delete before distribution)
 
      $ cd {{cookiecutter.app_name}}
      $ git init
-     $ git add *
+     $ git add .
      $ git commit -m "first commit"
      $ git remote add origin https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.app_name}}.git
+     $ git remote -v
      $ git push -u origin master
 
 3) Edit how the documentation should appear, by changing appropriate files in docs/
