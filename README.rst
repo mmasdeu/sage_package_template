@@ -19,4 +19,4 @@ Installation
 
      $ ~/.local/bin/cookiecutter https://github.com/mmasdeu/sage_package_template
 
-3) Follow the instructions that you will find in the README.rst file inside your package.
+3) Follow the instructions that you will find in the INSTALL.rst file inside your newly created package.
