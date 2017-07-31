@@ -16,7 +16,7 @@ Local install from source
 
 Download the source from the git repository::
 
-    $ git clone https://github.com/sagemath/{{cookiecutter.app_name}}.git
+    $ git clone https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.app_name}}.git
 
 Change to the root directory and run::
 
