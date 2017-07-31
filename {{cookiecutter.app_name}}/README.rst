@@ -1,5 +1,5 @@
 =========================
-{{cookiecutter.app_name}}
+{{cookiecutter.project_name}}
 =========================
 
 This package is designed as a simple `SageMath <http://www.sagemath.org>`_ package
