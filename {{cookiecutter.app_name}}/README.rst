@@ -45,7 +45,7 @@ your package.
 Automatically deploying documentation to GitHub pages using Travis CI
 .....................................................................
 
-* First enable Travis CI integration of your GitHub-hosted project. This is done by signing-in into https://travis-ci.org and pushing the switch corresponding to {{cookiecutter.app_name}}.
+* First enable Travis CI integration of your GitHub-hosted project. This is done by signing-in into https://travis-ci.org/profile/{{cookiecutter.github_username}} and pushing the switch corresponding to {{cookiecutter.app_name}}.
 
 * If you don't already have GitHub pages for your project: Create and
   checkout a branch ``gh-pages`` in your repository and put an empty
