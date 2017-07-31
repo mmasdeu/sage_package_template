@@ -8,6 +8,13 @@ matrix:
   allow_failures:
   - env: CACHE_NAME=older SAGE_SERVER={{cookiecutter.sage_mirror}}/sage/linux/64bit/ SAGE_AGE=1
 
+addons:
+   apt:
+     packages:
+      # On 8.0 with trusty, Fortran compiler is needed.
+      # Otherwise, numpy cannot be imported.
+      # Also, optional package installs in .travis-install.sh will trigger build of sage gcc.
+      - gfortran
 install:
 - "./.travis-install.sh"
 script:
