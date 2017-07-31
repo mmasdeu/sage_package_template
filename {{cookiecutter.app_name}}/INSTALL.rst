@@ -90,11 +90,10 @@ Further setup instructions (to delete before distribution)
    * Make sure that only one line is present in the ``before_script`` section of ``.travis.yml``. It should look like
    
         before_script:
-        - openssl aes-256-cbc -K $encrypted_896e4f392045_key -iv $encrypted_896e4f392045_iv
-          -in .travis_ci_gh_pages_deploy_key.enc -out .travis_ci_gh_pages_deploy_key -d || true
+        - openssl aes-256-cbc -K $encrypted_896e4f392045_key -iv $encrypted_896e4f392045_iv -in .travis_ci_gh_pages_deploy_key.enc -out .travis_ci_gh_pages_deploy_key -d || true
 
-   The names after the ``$`` signs should match those found in travis-ci.org > More options > settings. Make sure that
-   the ``|| true`` is also at the end of the line (add if it is not there).
+     The names after the ``$`` signs should match those found in travis-ci.org > More options > settings. Make sure that
+     the ``|| true`` is also at the end of the line (add if it is not there).
    
    * Add the encrypted private ssh key to the repository::
 
