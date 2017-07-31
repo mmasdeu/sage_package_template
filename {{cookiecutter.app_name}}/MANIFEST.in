@@ -1,0 +1,5 @@
+prune {{cookiecutter.app_name}}
+include VERSION
+include {{cookiecutter.app_name}}/*.py
+include {{cookiecutter.app_name}}/*.pyx
+
