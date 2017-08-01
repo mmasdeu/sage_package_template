@@ -2,7 +2,6 @@
 import os
 import sys
 import re
-import urllib2
 from setuptools import setup
 from codecs import open # To open the README file with proper encoding
 from setuptools.command.test import test as TestCommand # for tests
@@ -10,6 +9,7 @@ from distutils.command import build as build_module
 
 # Obtain the different Sage versions
 def get_all_version_names(mirror_url, idx = None, distribution = '{{cookiecutter.ubuntu_version}}'):
+    import urllib2
     if idx is None:
         idx = 0
     else:
