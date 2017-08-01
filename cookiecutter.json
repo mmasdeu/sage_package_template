@@ -1,7 +1,7 @@
 {
 	"full_name": "John Doe",
         "email": "",
-	"github_username": "johndoe",
+        "github_username": "johndoe",
 	"project_name": "Sage Package Template",
 	"app_name": "sage_package_template",
 	"project_short_description": "An example of a basic sage package.",
