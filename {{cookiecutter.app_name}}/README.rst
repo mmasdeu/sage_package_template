@@ -10,6 +10,8 @@ python recommendations and adapt them to the SageMath community. You can find mo
 advanced documentation on python package creation on
 `How To Package Your Python Code <https://packaging.python.org/>`_.
 
+Once the Travis CI set-up has been completed, the documentation for the package can be found at https://{{cookiecutter.github_username}}.github.io/{{cookiecutter.app_name}}/doc/html/
+
 Installation
 ------------
 
