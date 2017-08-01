@@ -1,3 +1,2 @@
 sagemath >= 1.2.5
-urllib2 >= 1.0
-cython >= 1.0
+cython >= 0.26
