@@ -13,10 +13,14 @@ Installation
 
 1) Install cookiecutter::
 
-     $ pip install cookiecutter --user
+     $ pip install cookiecutter
+
+(add ``--user`` if you don't have enough privileges)
 
 2) Bake your package::
 
-     $ ~/.local/bin/cookiecutter https://github.com/mmasdeu/sage_package_template
+     $ cookiecutter https://github.com/mmasdeu/sage_package_template
+
+(the ``cookiecutter`` binary may have been installed somewhere outside of your PATH, so you might need to `find` or `locate` for it)
 
 3) Follow the instructions that you will find in the INSTALL.rst file inside your newly created package.
