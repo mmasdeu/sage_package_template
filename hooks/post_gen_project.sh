@@ -3,6 +3,10 @@ command -v git >/dev/null 2>&1 || { echo >&2 "I require git but it's not install
 command -v ssh-keygen >/dev/null 2>&1 || { echo >&2 "I require ssh-keygen but it's not installed.  Aborting."; exit 1; }
 command -v travis >/dev/null 2>&1 || { echo >&2 "I require travis (https://github.com/travis-ci/travis.rb) but it's not installed.  Aborting."; exit 1; }
 
+echo "Do you wish create a new GitHub repository?"
+select yn in "Yes" "No"; do
+    case $yn in
+        Yes )
 curl -s https://api.github.com/repos/{{cookiecutter.github_username}}/{{cookiecutter.app_name}} | grep "Not Found" || { echo >&2 "The repository {{cookiecutter.app_name}} already exists in {{cookiecutter.github_username}}.  Aborting."; exit 1; }
 
 echo "Trying to create a new repository on github.com."
@@ -13,10 +17,17 @@ echo "{{cookiecutter.project_short_description}}"
 curl -s -u '{{cookiecutter.github_username}}' https://api.github.com/user/repos -d '{"name":"{{cookiecutter.app_name}}","description":"{{cookiecutter.project_short_description}}"}' >> install.log # Create new repository on github.com
 
 echo "Repository successfully created."
-echo ""
-echo "Now generating a ECDSA key for Travis-CI doc deployment..."
-ssh-keygen -q -t ecdsa -f .travis_ci_gh_pages_deploy_key -N "" # Generate ECDSA key for Travis-CI doc deployment
-echo "...done."
+	break;;
+        No ) break;;
+    esac
+done
+
+
+
+echo "Do you wish to initialize the GitHub repository?"
+select yn in "Yes" "No"; do
+    case $yn in
+        Yes )
 
 echo "Initializing the GitHub repository and pushing changes. You may be asked your GitHub password again..."
 git init
@@ -38,13 +49,29 @@ git push -u origin gh-pages >> install.log
 cd ..
 echo "Done with branch creation"
 
+	break;;
+        No ) break;;
+    esac
+done
 
-echo "Add deploy public key to GitHub"
+echo "Do you wish to generate a key for Travis-CI documentation deployment?"
+select yn in "Yes" "No"; do
+    case $yn in
+        Yes )
+
+echo "Now generating a ECDSA key..."
+ssh-keygen -q -t ecdsa -f .travis_ci_gh_pages_deploy_key -N "" # Generate ECDSA key for Travis-CI doc deployment
+echo "...done."
+
+echo "Adding deploy public key to GitHub"
 filecontents=$(cat .travis_ci_gh_pages_deploy_key.pub)
 curl -s -u '{{cookiecutter.github_username}}' https://api.github.com/repos/{{cookiecutter.github_username}}/{{cookiecutter.app_name}}/keys -d "{\"title\":\"Key for deploying documentation to GitHub pages\",\"key\":\"${filecontents}\", \"read_only\":\"false\"}" >> install.log # Add deploy public key to GitHub
 
 echo "Done with public key deployment. You may receive an email from GitHub that lets you know of this."
-
+	    echo "Do you wish to deploy the newly created key?"
+	    select yn in "Yes" "No"; do
+		case $yn in
+		    Yes )
 echo "Next the deploy key will be encrypted for Travis CI to use. Also we will enable the newly created repository in Travis CI."
 travis login -u {{cookiecutter.github_username}}
 travis encrypt-file .travis_ci_gh_pages_deploy_key --add before_script -r {{cookiecutter.github_username}}/{{cookiecutter.app_name}}
@@ -59,3 +86,12 @@ git commit -m "Deploy built documentation to GitHub"
 git push
 
 echo "Congratulations! The newly created repository is now being tested by Travis CI"
+			break;;
+		    No ) break;;
+		esac
+	    done
+	    break;;
+        No ) break;;
+    esac
+done
+
