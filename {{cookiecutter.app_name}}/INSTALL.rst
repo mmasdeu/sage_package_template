@@ -23,11 +23,11 @@ Further setup instructions (to delete before distribution)
 
    Install ``twine``::
 
-       $ python install --upgrade twine
+       $ pip install --upgrade twine
 
    Create the distribution (you can also use ``bdist`` instead to create the built distribution instead of the source one)::
 
-       $ python setup.py sdist
+       $ sage -python setup.py sdist
 
    Upload to PyPI::
 

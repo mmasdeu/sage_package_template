@@ -2,11 +2,11 @@
 	"full_name": "John Doe",
         "email": "",
         "github_username": "johndoe",
-	"project_name": "Answer to the Ultimate Question",
 	"app_name": "answer_ultimate_question",
+	"project_name": "Answer to the Ultimate Question",
 	"project_short_description": "Computes the Answer to the Ultimate Question.",
         "version": "0.0.1",
-        "ubuntu_version": "Ubuntu_16.04-x86_64",
+        "ubuntu_version": "Ubuntu_14.04-x86_64",
         "sage_required_version": ">=7.5",
         "sage_mirror": "http://mirrors.xmission.com",
         "keywords": "SageMath packaging"
