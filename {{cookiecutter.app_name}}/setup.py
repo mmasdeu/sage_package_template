@@ -7,8 +7,16 @@ from codecs import open # To open the README file with proper encoding
 from setuptools.command.test import test as TestCommand # for tests
 from distutils.command import build as build_module
 
+{%- set license_classifiers = {
+    'MIT license': 'License :: OSI Approved :: MIT License',
+    'BSD license': 'License :: OSI Approved :: BSD License',
+    'ISC license': 'License :: OSI Approved :: ISC License (ISCL)',
+    'Apache Software License 2.0': 'License :: OSI Approved :: Apache Software License',
+    'GNU General Public License v3': 'License :: OSI Approved :: GNU General Public License v3 (GPLv3)'
+} %}
+
 # Obtain the different Sage versions
-def get_all_version_names(mirror_url, idx = None, distribution = '{{cookiecutter.ubuntu_version}}'):
+def get_all_version_names(mirror_url, idx = None, distribution = '{{cookiecutter.travis_ubuntu_version}}'):
     import urllib2
     if idx is None:
         idx = 0
@@ -59,7 +67,8 @@ if __name__ == "__main__":
 
     # Specify the required Sage version
     sage_required_version = '{{cookiecutter.sage_required_version}}'
-    REQUIREMENTS = [i.strip() for i in open("requirements.txt").readlines()]
+    REQUIREMENTS = [i.strip() for i in open("requirements.txt").readlines() if i[0] != '#']
+    CLASSIFIERS = [i.strip() for i in open("classifiers.txt").readlines() if i[0] != '#']
 
     setup(
         name = "{{cookiecutter.app_name}}",
@@ -69,19 +78,10 @@ if __name__ == "__main__":
         url='https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.app_name}}',
         author='{{cookiecutter.full_name}}',
         author_email='{{cookiecutter.email}}', # choose a main contact email
-        license='GPLv2+', # This should be consistent with the LICENCE file
-        classifiers=[
-          # How mature is this project? Common values are
-          #   3 - Alpha
-          #   4 - Beta
-          #   5 - Production/Stable
-          'Development Status :: 4 - Beta',
-          'Intended Audience :: Science/Research',
-          'Topic :: Software Development :: Build Tools',
-          'Topic :: Scientific/Engineering :: Mathematics',
-          'License :: OSI Approved :: GNU General Public License v2 or later (GPLv2+)',
-          'Programming Language :: Python :: 2.7',
-        ], # classifiers list: https://pypi.python.org/pypi?%3Aaction=list_classifiers
+        {%- if cookiecutter.open_source_license in license_classifiers %}
+        license="{{ cookiecutter.open_source_license }}",
+        {%- endif %}
+        classifiers = CLASSIFIERS,
         keywords = "{{cookiecutter.keywords}}",
         install_requires = REQUIREMENTS, # This ensures that Sage is installed
         packages = ['{{cookiecutter.app_name}}'],

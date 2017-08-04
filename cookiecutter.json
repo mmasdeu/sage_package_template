@@ -1,13 +1,14 @@
 {
 	"full_name": "John Doe",
-        "email": "",
+        "email": "johndoe@yahoo.com",
         "github_username": "johndoe",
         "project_name": "Answer to the Ultimate Question",
         "app_name": "{{cookiecutter.project_name|lower|replace(' ', '_')|replace('-','_') }}",
 	"project_short_description": "Computes the Answer to the Ultimate Question.",
-        "version": "0.0.1",
-        "ubuntu_version": "Ubuntu_14.04-x86_64",
-        "sage_required_version": ">=7.5",
+        "project_version": "0.0.1",
+        "travis_ubuntu_version": "Ubuntu_14.04-x86_64",
+        "sage_required_version": ">=7.4",
         "sage_mirror": "http://mirrors.xmission.com",
-        "keywords": "SageMath packaging"
+        "keywords": "SageMath packaging",
+        "open_source_license": ["MIT license", "BSD license", "ISC license", "Apache Software License 2.0", "GNU General Public License v3", "Not open source"]
 }
