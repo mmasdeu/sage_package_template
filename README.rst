@@ -42,6 +42,7 @@ Usage
 2) Follow the instructions that come up on the terminal. 
    
    First you will be asked to define a set of variables that will inicialize your project:
+   
     - ``full_name``: the author of the package.
     - ``email``: the email adress of the author.
     - ``github_username``: In order to configurate the GitHub repository.
