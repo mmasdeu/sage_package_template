@@ -15,19 +15,19 @@ For a smooth setup process you will need:
 
 - a `GitHub`_ account,
 - to authorize `Travis CI`_ to access your GitHub account by logging in once on the website,
-- to have **git** and the python packages **cookiecutter** and **sagemath** ¿ssh, pip?
+- to have **git** and the python packages **cookiecutter** and **sagemath**
 
-    To install cookiecutter run::
+  To install cookiecutter run::
 
-        $ pip install cookiecutter
+      $ pip install cookiecutter
 
-    (add ``--user`` if you don't have enough privileges)
-    
-    To install sagemath run::
+  (add ``--user`` if you don't have enough privileges)
 
-        $ sage -pip install --upgrade sagemath
+  To install sagemath run::
 
-    (add ``--user`` if you don't have enough privileges)
+      $ sage -pip install --upgrade sagemath
+
+  (add ``--user`` if you don't have enough privileges)
 
 Usage
 ^^^^^
