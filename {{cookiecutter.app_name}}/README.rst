@@ -4,13 +4,10 @@
 .. image:: https://travis-ci.org/{{cookiecutter.github_username}}/{{cookiecutter.app_name}}.svg?branch=master
     :target: https://travis-ci.org/{{cookiecutter.github_username}}/{{cookiecutter.app_name}}
 
-This package is designed as a simple `SageMath <http://www.sagemath.org>`_ package
-example to serve as a good practice reference for package developers. We follow
-python recommendations and adapt them to the SageMath community. You can find more
-advanced documentation on python package creation on
-`How To Package Your Python Code <https://packaging.python.org/>`_.
+This package is a `SageMath <http://www.sagemath.org>`_ package that answers the ultimate question.
 
-Once the Travis CI set-up has been completed, the documentation for the package can be found at https://{{cookiecutter.github_username}}.github.io/{{cookiecutter.app_name}}/doc/html/
+The full documentation for the package can be found at https://{{cookiecutter.github_username}}.github.io/{{cookiecutter.app_name}}/doc/html/
+
 
 Installation
 ------------
@@ -32,6 +29,7 @@ shorthand::
 
     $ make install
 
+
 Usage
 -----
 
@@ -41,15 +39,18 @@ Once the package is installed, you can use it in Sage with::
     sage: answer_to_ultimate_question()
     42
 
-Source code
------------
+Developer's guide
+-----------------
+Want to contribute or modify {{cookiecutter.app_name}}? Excellent! This section presents some useful information on what is included in the package.
 
-All source code is stored in the folder ``{{cookiecutter.app_name}}`` using the same name as the
-package. This is not mandatory but highly recommended for clarity. All source folder
+Source code
+^^^^^^^^^^^
+
+All source code is stored in the folder ``{{cookiecutter.app_name}}``. All source folder
 must contain a ``__init__.py`` file with needed includes.
 
 Tests
------
+^^^^^
 
 This package is configured for tests written in the documentation
 strings, also known as ``doctests``. For examples, see this
@@ -70,7 +71,7 @@ Shorthand::
     $ make test
 
 Documentation
--------------
+^^^^^^^^^^^^^
 
 The documentation of the package can be generated using Sage's
 ``Sphinx`` installation::

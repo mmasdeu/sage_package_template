@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
-# sample documentation build configuration file,
-# inspried by slabbe configuration file created sphinx-quickstart
+# {{cookiecutter.app_name}} documentation build configuration file,
+# inspried by configuration file created by sphinx-quickstart
 #
 # This file is execfile()d with the current directory set to its
 # containing dir.
@@ -13,7 +13,7 @@
 # serve to show the default.
 
 # General information about the project.
-project = u"{{cookiecutter.project_short_description}}"
+project = u"{{cookiecutter.project_name}}"
 copyright = u"2017, {{cookiecutter.full_name}}"
 package_name = "{{cookiecutter.app_name}}"
 package_folder = "../../{{cookiecutter.app_name}}"
