@@ -43,23 +43,38 @@ Usage
    
    First you will be asked to define a set of variables that will inicialize your project:
    
-    - ``full_name``: the author of the package.
-    - ``email``: the email adress of the author.
-    - ``github_username``: In order to configurate the GitHub repository.
-    - ``project_name``: The title of the package. It will appear mainly on the documentation.
-    - ``app_name``: The name of the package. It will be used to install and import the module.
-    - ``project_short_description``: A short sentence to describe what the package does. Also, the short description on the GitHub repository.
-    - ``project_version``: Version number.
-    - ``travis_ubuntu_version``: The version of Ubuntu that you set Travis CI to use (for automatized documentation).
-    - ``sage_required_version``: Minimum SageMath version needed for the package.
-    - ``sage_mirror``: When doctesting with Travis CI, website to download the SageMath binaries.
-    - ``keywords``: Keywords for the GitHub repository.
-    - ``Select open_source_license``: License of distribution of the package. For more information see `Licenses&Standards <https://opensource.org/licenses>`_.
+   - ``full_name``: the author of the package.
+   - ``email``: the email adress of the author.
+   - ``github_username``: In order to configurate the GitHub repository.
+   - ``project_name``: The title of the package. It will appear mainly on the documentation.
+   - ``app_name``: The name of the package. It will be used to install and import the module.
+   - ``project_short_description``: A short sentence to describe what the package does. Also, the short description on the GitHub repository.
+   - ``project_version``: Version number.
+   - ``travis_ubuntu_version``: The version of Ubuntu that you set Travis CI to use (for automatized documentation).
+   - ``sage_required_version``: Minimum SageMath version needed for the package.
+   - ``sage_mirror``: When doctesting with Travis CI, website to download the SageMath binaries.
+   - ``keywords``: Keywords for the GitHub repository.
+   - ``Select open_source_license``: License of distribution of the package. For more information see `Licenses&Standards <https://opensource.org/licenses>`_.
    
    Next, you will be asked to answer a series of questions in order to configure (or not) `GitHub`_ and `Travis CI`_. For more information on the setup process check the MANUAL_INSTALL.rst file inside your newly created package.
 
 3) Now your package is shaped and ready for baking! Read the Developer's guide to see how to use and modify your newly created package.
 
+4) Deploy package to PyPI (optional).
+
+   Create an account at https://pypi.python.org/pypi
+
+   Install ``twine``::
+
+       $ pip install --upgrade twine
+
+   Create the distribution (you can also use ``bdist`` instead to create the built distribution instead of the source one)::
+
+       $ sage -python setup.py sdist
+
+   Upload to PyPI::
+
+       $ twine upload dist/* -r pypi
 
 
 Developer's guide

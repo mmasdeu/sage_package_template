@@ -16,24 +16,7 @@ Further setup instructions (to delete before distribution)
 
 3) Edit how the documentation should appear, by changing appropriate files in docs/
 
-
-4) Deploy package to PyPI (optional).
-
-   Create an account at https://pypi.python.org/pypi
-
-   Install ``twine``::
-
-       $ pip install --upgrade twine
-
-   Create the distribution (you can also use ``bdist`` instead to create the built distribution instead of the source one)::
-
-       $ sage -python setup.py sdist
-
-   Upload to PyPI::
-
-       $ twine upload dist/* -r pypi
-
-5) Enable Travis CI integration: follow the rest of the article to enable Continuous Integration via `https://travis-ci.org`.
+#) Enable Travis CI integration: follow the rest of the article to enable Continuous Integration via `https://travis-ci.org`.
 
    Scripts that run ``make test`` on various SageMath versions on the
    Travis CI system are included.
@@ -45,7 +28,7 @@ Further setup instructions (to delete before distribution)
    experimental SageMath packages need to be installed prior to running
    your package.
 
-6) Enable automatic deployment of documentation to GitHub pages using Travis CI.
+#) Enable automatic deployment of documentation to GitHub pages using Travis CI.
 
    * First enable Travis CI integration of your GitHub-hosted project. This is done by signing-in into https://travis-ci.org/profile/{{cookiecutter.github_username}} and pushing the switch corresponding to {{cookiecutter.app_name}}.
 
