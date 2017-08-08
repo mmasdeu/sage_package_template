@@ -31,17 +31,21 @@ echo "Do you wish to upload the key for Travis-CI documentation deployment to Gi
 select yn in "Yes" "No"; do
     case $yn in
         Yes )
-	    scripts/04_upload_deploy_key.sh || break;;
-	    echo "Do you wish to deploy the uploaded key to Travis CI?";
+	    scripts/04_upload_deploy_key.sh || break
+	    echo "Do you wish to deploy the uploaded key to Travis CI?"
 	    select yn in "Yes" "No"; do
 		case $yn in
 		    Yes )
-			scripts/05_deploy_key_to_travis_ci.sh || break;;
-		    No ) break;;
+			scripts/05_deploy_key_to_travis_ci.sh || break
+			;;
+		    No ) break
+			 ;;
 		esac
 	    done
-	    break;;
-        No ) break;;
+	    break
+	    ;;
+        No ) break
+	     ;;
     esac
 done
 echo "Congratulations! You have successfully created a new package."
