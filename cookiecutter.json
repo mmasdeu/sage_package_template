@@ -1,6 +1,6 @@
 {
 	"full_name": "John Doe",
-        "email": "johndoe@yahoo.com",
+        "email": "johndoe@domain.com",
         "github_username": "johndoe",
         "project_name": "Answer to the Ultimate Question",
         "app_name": "{{cookiecutter.project_name|lower|replace(' ', '_')|replace('-','_') }}",
