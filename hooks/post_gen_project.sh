@@ -32,7 +32,7 @@ select yn in "Yes" "No"; do
     case $yn in
         Yes )
 	    scripts/04_upload_deploy_key.sh || break;;
-	    echo "Do you wish to deploy the uploaded key to Travis CI?"
+	    echo "Do you wish to deploy the uploaded key to Travis CI?";
 	    select yn in "Yes" "No"; do
 		case $yn in
 		    Yes )
