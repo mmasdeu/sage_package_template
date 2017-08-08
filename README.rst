@@ -8,14 +8,14 @@ This Cookiecutter generates the basic structure to develop your own `SageMath <h
 Initialitzation
 ---------------
 
-Prerequisits
-^^^^^^^^^^^^
+Prerequisites
+^^^^^^^^^^^^^
 
 For a smooth setup process you will need:
 
 - a `GitHub`_ account,
-- to authorize `Travis CI`_ to access your GitHub account by logging in once on the website,
-- to have **git** and the python packages **cookiecutter** and **sagemath**
+- to have already linked `Travis CI`_ to your GitHub account, by logging in once on the website,
+- to have **git** and the python packages `cookiecutter <https://github.com/audreyr/cookiecutter>`_ and `sagemath <https://github.com/mmasdeu/sagemath>`_.
 
   To install cookiecutter run::
 
@@ -37,30 +37,30 @@ Usage
 
       $ cookiecutter https://github.com/mmasdeu/sage_package_template
 
-   (the ``cookiecutter`` binary may have been installed somewhere outside of your PATH, so you might need to `find` or `locate` for it)
+   (the ``cookiecutter`` binary may have been installed somewhere outside of your PATH, so you might need to `find` or `locate` it)
 
 2) Follow the instructions that come up on the terminal. 
    
    First you will be asked to define a set of variables that will inicialize your project:
    
-   - ``full_name``: the author of the package.
-   - ``email``: the email adress of the author.
-   - ``github_username``: In order to configurate the GitHub repository.
-   - ``project_name``: The title of the package. It will appear mainly on the documentation.
-   - ``app_name``: The name of the package. It will be used to install and import the module.
+   - ``full_name``: the author(s) of the package.
+   - ``email``: the email adress(es) of the author.
+   - ``github_username``: The account on which to place the GitHub repository.
+   - ``project_name``: The full name of the package. It will appear mainly on the documentation.
+   - ``app_name``: The name (slug) of the package. It will be used to install and import the module.
    - ``project_short_description``: A short sentence to describe what the package does. Also, the short description on the GitHub repository.
-   - ``project_version``: Version number.
-   - ``travis_ubuntu_version``: The version of Ubuntu that you set Travis CI to use (for automatized documentation).
+   - ``project_version``: Initial version number.
+   - ``travis_ubuntu_version``: The version of Ubuntu that you set Travis CI to use (for automatically running tests).
    - ``sage_required_version``: Minimum SageMath version needed for the package.
-   - ``sage_mirror``: When doctesting with Travis CI, website to download the SageMath binaries.
-   - ``keywords``: Keywords for the GitHub repository.
+   - ``sage_mirror``: When doctesting with Travis CI, the mirror from which to download the SageMath binaries.
+   - ``keywords``: Keywords for the both the GitHub repository and the Python repository PyPI.
    - ``Select open_source_license``: License of distribution of the package. For more information see `Licenses&Standards <https://opensource.org/licenses>`_.
    
    Next, you will be asked to answer a series of questions in order to configure (or not) `GitHub`_ and `Travis CI`_. For more information on the setup process check the MANUAL_INSTALL.rst file inside your newly created package.
 
-3) Now your package is shaped and ready for baking! Read the Developer's guide to see how to use and modify your newly created package.
+3) Now your package is shaped and ready! Read the Developer's guide (next section) to see how to use and modify your newly created package.
 
-4) Deploy package to PyPI (optional).
+4) Deploy the package to PyPI (optional).
 
    Create an account at https://pypi.python.org/pypi
 
@@ -68,7 +68,7 @@ Usage
 
        $ pip install --upgrade twine
 
-   Create the distribution (you can also use ``bdist`` instead to create the built distribution instead of the source one)::
+   Create the distribution (you can also use ``bdist`` instead to create a built distribution instead of a source one)::
 
        $ sage -python setup.py sdist
 
@@ -84,8 +84,8 @@ Source code
 ^^^^^^^^^^^
 
 All source code is stored in the folder using the same name as the
-package. This is not mandatory but highly recommended for clarity. All source folder
-must contain a ``__init__.py`` file with needed includes.
+package. This is not mandatory but highly recommended for clarity. All source folders
+must contain a ``__init__.py`` file with the needed includes.
 
 Tests
 ^^^^^
