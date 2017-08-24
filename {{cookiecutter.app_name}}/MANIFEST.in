@@ -2,4 +2,5 @@ prune {{cookiecutter.app_name}}
 include VERSION
 include {{cookiecutter.app_name}}/*.py
 include {{cookiecutter.app_name}}/*.pyx
+include {{cookiecutter.app_name}}/*.pxd
 
