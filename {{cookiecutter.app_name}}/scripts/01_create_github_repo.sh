@@ -6,6 +6,6 @@ echo "You will be asked for the GitHub password corresponding to the user {{cook
 echo "{{cookiecutter.github_username}}/{{cookiecutter.app_name}}"
 echo "{{cookiecutter.project_short_description}}"
 
-curl -s -u '{{cookiecutter.github_username}}' https://api.github.com/user/repos -d '{"name":"{{cookiecutter.app_name}}","description":"{{cookiecutter.project_short_description}}"}' >> install.log # Create new repository on github.com
+curl -s -u '{{cookiecutter.github_username}}' https://api.github.com/user/repos -d '{"name":"{{cookiecutter.app_name}}","description":"{{cookiecutter.project_short_description}}"}' >> install.log
 
 echo "Repository successfully created."
