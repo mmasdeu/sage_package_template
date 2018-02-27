@@ -8,17 +8,26 @@ SAGE = sage
 
 all: install test
 
+build:
+	$(SAGE) -python setup.py build_ext
+
 install:
-	$(SAGE) -pip install --upgrade --no-index -v .
+	$(SAGE) -python setup.py install
 
-uninstall:
-	$(SAGE) -pip uninstall .
-
-develop:
-	$(SAGE) -pip install --upgrade -e .
+sdist:
+	$(SAGE) -python setup.py sdist
 
 test:
-	$(SAGE) setup.py test
+	$(SAGE) -python setup.py test
+
+pip-install:
+	$(SAGE) -pip install --upgrade --no-index -v .
+
+pip-uninstall:
+	$(SAGE) -pip uninstall .
+
+pip-develop:
+	$(SAGE) -pip install --upgrade -e .
 
 coverage:
 	$(SAGE) -coverage $(PACKAGE)/*
@@ -30,8 +39,10 @@ doc-pdf:
 	cd docs && $(SAGE) -sh -c "make latexpdf"
 
 clean: clean-doc
+	rm -rf build dist *.egg-info
+	rm -rf $(PACKAGE)/*.c
 
 clean-doc:
 	cd docs && $(SAGE) -sh -c "make clean"
 
-.PHONY: all install develop test coverage clean clean-doc doc doc-pdf
+.PHONY: all build install test coverage sdist pip-install pip-uninstall pip-develop clean clean-doc doc doc-pdf
