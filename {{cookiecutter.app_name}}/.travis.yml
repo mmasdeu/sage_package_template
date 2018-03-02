@@ -6,9 +6,11 @@ matrix:
       DEPLOY_DOC_TO_DIRECTORY=doc/html SAGE_SERVER={{cookiecutter.sage_mirror}}/sage/linux/64bit/
       SAGE_AGE=0
   - env: CACHE_NAME=older SAGE_SERVER={{cookiecutter.sage_mirror}}/sage/linux/64bit/ SAGE_AGE=1
+  - env: CACHE_NAME=oldest SAGE_SERVER={{cookiecutter.sage_mirror}}/sage/linux/64bit/ SAGE_AGE=2
   # - env: CACHE_NAME=ubuntu-package SAGE_AGE=-1 # Uncomment to test against Ubuntu's packaged SageMath
   allow_failures:
   - env: CACHE_NAME=older SAGE_SERVER={{cookiecutter.sage_mirror}}/sage/linux/64bit/ SAGE_AGE=1
+  - env: CACHE_NAME=oldest SAGE_SERVER={{cookiecutter.sage_mirror}}/sage/linux/64bit/ SAGE_AGE=2
   # - env: CACHE_NAME=ubuntu-package SAGE_AGE=-1 # Uncomment to test against Ubuntu's packaged SageMath
 addons:
    apt:

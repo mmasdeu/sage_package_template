@@ -46,7 +46,6 @@ sys.path.append(os.path.join(SAGE_SRC, "sage_setup", "docbuild", "ext"))
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    #'sphinx.ext.autodoc',
     'sage_autodoc',
     'sphinx.ext.doctest',
     'sphinx.ext.todo',

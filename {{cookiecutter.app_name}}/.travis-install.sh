@@ -11,6 +11,7 @@ if [ "${SAGE_AGE}" == "-1" ]; then
  sudo apt-get install sagemath-upstream-binary -y
  cd $HOME
  mkdir -p SageMath
+ sudo sage -pip install sphinxcontrib-websupport
 else
   SAGE_IMAGE=`python2 -c "import sage_version; print sage_version.get_all_version_names('${SAGE_SERVER}index.html',${SAGE_AGE})"`
   cd $HOME
@@ -26,5 +27,6 @@ else
   #SageMath/sage -i lrslib
   # To initialize matplotlib font manager
   $HOME/SageMath/sage -python -c 'import matplotlib.pyplot'
+  $HOME/SageMath/sage -pip install --user sphinxcontrib-websupport
 fi
 
