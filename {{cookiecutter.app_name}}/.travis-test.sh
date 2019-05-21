@@ -11,5 +11,5 @@ else
     ${HOME}/SageMath/sage -pip install --upgrade --no-index -v .
     ${HOME}/SageMath/sage setup.py test
     (cd docs && ${HOME}/SageMath/sage -sh -c "make html")
-    ${HOME}/SageMath/sage -pip uninstall .
+    ${HOME}/SageMath/sage -pip uninstall {{cookiecutter.app_name}}
 fi
