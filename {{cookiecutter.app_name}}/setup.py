@@ -52,6 +52,9 @@ if __name__ == "__main__":
 
     # Specify the required Sage version
     sage_required_version = '{{cookiecutter.sage_required_version}}'
+    sage_current_version = sage_version()
+    py2 = bool('8.' in sage_current_version or '7.' in sage_current_version)
+
     REQUIREMENTS = [i.strip() for i in open("requirements.txt").readlines() if i[0] != '#']
     CLASSIFIERS = [i.strip() for i in open("classifiers.txt").readlines() if i[0] != '#']
 
@@ -71,7 +74,7 @@ if __name__ == "__main__":
         setup_requires = REQUIREMENTS, # currently useless, see https://www.python.org/dev/peps/pep-0518/
         install_requires = REQUIREMENTS, # This ensures that Sage is installed
         packages = ['{{cookiecutter.app_name}}'],
-        ext_modules = cythonize(ext_modules), # This line is only needed if there are cython files present
+        ext_modules = cythonize(ext_modules) if py2 else cythonize(ext_modules, compiler_directives={'language_level' : "3"}),
         include_package_data = True,
         cmdclass = {'build': build, 'test': SageTest} # adding a special setup command for tests
     )
