@@ -42,6 +42,7 @@ if __name__ == "__main__":
     from Cython.Build import cythonize
     import Cython.Compiler.Options
     from sage.env import sage_include_directories
+    from sage.misc.banner import version as sage_version
 
     # Cython modules
     ext_modules = [
