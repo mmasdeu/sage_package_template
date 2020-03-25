@@ -15,6 +15,6 @@ Topic :: Scientific/Engineering :: Mathematics
 {%- if cookiecutter.open_source_license in license_classifiers %}
 {{ license_classifiers[cookiecutter.open_source_license] }}
 {%- endif %}
-Programming Language :: Python :: 2.7
+Programming Language :: Python :: 3.1
 
 # classifiers list: https://pypi.python.org/pypi?%3Aaction=list_classifiers
