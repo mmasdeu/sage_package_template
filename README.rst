@@ -2,7 +2,7 @@
 A Cookiecutter for SageMath projects
 ====================================
 
-This Cookiecutter generates the basic structure to develop your own `SageMath <http://www.sagemath.org>`_ package, and includes the possibility of authomaticaly creating a `GitHub <https://github.com/>`_ repository and configurating it together with `Travis CI <https://travis-ci.org/>`_ for automatic testing and documentation deployment. We follow python recommendations and adapt them to the SageMath community. You can find more advanced documentation on python package creation on
+This Cookiecutter generates the basic structure to develop your own `SageMath <http://www.sagemath.org>`_ package, and includes the possibility of authomaticaly creating a `GitHub <https://github.com/>`_ repository and configuring it together with `Travis CI <https://travis-ci.org/>`_ for automatic testing and documentation deployment. We follow python recommendations and adapt them to the SageMath community. You can find more advanced documentation on python package creation on
 `How To Package Your Python Code <https://packaging.python.org/>`_.
 
 Initialitzation
