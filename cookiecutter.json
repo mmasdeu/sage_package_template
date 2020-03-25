@@ -6,8 +6,8 @@
         "app_name": "{{cookiecutter.project_name|lower|replace(' ', '_')|replace('-','_') }}",
 	"project_short_description": "Computes the Answer to the Ultimate Question.",
         "project_version": "0.0.1",
-        "travis_ubuntu_version": "Ubuntu_14.04-x86_64",
-        "sage_required_version": ">=7.4",
+        "travis_ubuntu_version": "Ubuntu_18.04-x86_64",
+        "sage_required_version": ">=9.0",
         "sage_mirror": "http://mirrors.xmission.com",
         "keywords": "SageMath packaging",
         "open_source_license": ["MIT license", "BSD license", "ISC license", "Apache Software License 2.0", "GNU General Public License v3", "Not open source"]
