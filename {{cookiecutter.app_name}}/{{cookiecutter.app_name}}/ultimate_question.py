@@ -8,7 +8,7 @@ of Catalan numbers from SageMath.
 
 EXAMPLES ::
 
-    sage: from {{cookiecutter.app_name}} import answer_to_ultimate_question
+    sage: from .{{cookiecutter.app_name}} import answer_to_ultimate_question
     sage: answer_to_ultimate_question()
     42
 
@@ -23,7 +23,7 @@ AUTHORS:
 - Viviane Pons: initial implementation
 """
 from sage.combinat.combinat import catalan_number
-from one_cython_file import quick_question
+from .one_cython_file import quick_question
 
 def answer_to_ultimate_question():
     r"""
@@ -34,7 +34,7 @@ def answer_to_ultimate_question():
 
     EXAMPLES ::
 
-        sage: from {{cookiecutter.app_name}} import answer_to_ultimate_question
+        sage: from .{{cookiecutter.app_name}} import answer_to_ultimate_question
         sage: answer_to_ultimate_question()
         42
 
