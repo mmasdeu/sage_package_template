@@ -8,7 +8,7 @@ of Catalan numbers from SageMath.
 
 EXAMPLES ::
 
-    sage: from .{{cookiecutter.app_name}} import answer_to_ultimate_question
+    sage: from .ultimate_question import answer_to_ultimate_question
     sage: answer_to_ultimate_question()
     42
 
@@ -34,7 +34,7 @@ def answer_to_ultimate_question():
 
     EXAMPLES ::
 
-        sage: from .{{cookiecutter.app_name}} import answer_to_ultimate_question
+        sage: from .ultimate_question import answer_to_ultimate_question
         sage: answer_to_ultimate_question()
         42
 
