@@ -3,7 +3,7 @@ curl -s https://api.github.com/repos/{{cookiecutter.github_username}}/{{cookiecu
 
 echo "Trying to create a new repository on github.com."
 echo "You will be asked for the GitHub password corresponding to the user {{cookiecutter.github_username}}".
-echo "Instead of your password, you MUST use a Personal Authentication Token !!!"
+echo "Instead of your password, you MUST use a Personal Access Token !!!"
 echo "( See here how to get one:"
 echo "  https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line )"
 echo "{{cookiecutter.github_username}}/{{cookiecutter.app_name}}"
