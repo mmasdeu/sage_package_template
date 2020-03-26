@@ -9,6 +9,10 @@ git remote add origin https://github.com/{{cookiecutter.github_username}}/{{cook
 git push -u origin master >> install.log
 echo "Initialization done."
 echo "Create a branch to hold the automatically generated documentation. You may be asked your GitHub password again..."
+echo "Rembember to use instead the Personal Access Token!"
+echo "( See here how to get one:"
+echo "  https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line )"
+
 git clone --single-branch --depth 1 https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.app_name}}.git gh-pages >> install.log
 cd gh-pages
 git checkout --orphan gh-pages >> install.log
