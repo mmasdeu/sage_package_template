@@ -9,7 +9,7 @@ travis encrypt-file .travis_ci_gh_pages_deploy_key --add before_script -r {{cook
 travis enable -r {{cookiecutter.github_username}}/{{cookiecutter.app_name}}
 echo "Done!"
 
-echo "Finally we add the encrypted key and commit changes to GitHub. You may be asked for your GitHub password one last time."
+echo "Finally we add the encrypted key and commit changes to GitHub. You may be asked for your Personal Access Token one last time."
 
 git add .travis_ci_gh_pages_deploy_key.enc
 git add .travis.yml
